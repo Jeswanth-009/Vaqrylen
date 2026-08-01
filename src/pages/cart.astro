@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import ChatFAB from '../components/ChatFAB.astro';
+---
+
+<Layout title="Cart — Vaqrylen">
+  <main>
+    <section class="section-contact" data-od-id="cart-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Your Cart</h2>
+        </div>
+        <div class="cart-empty">
+          <p>Your cart is empty.</p>
+          <a href="/" class="link-more">Browse Products</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <ChatFAB />
+</Layout>

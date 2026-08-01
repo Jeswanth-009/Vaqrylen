@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProductCarousel from '../components/ProductCarousel.astro';
+import FeatureBlock from '../components/FeatureBlock.astro';
+import CommunityBlock from '../components/CommunityBlock.astro';
+import Testimonials from '../components/Testimonials.astro';
+import SocialFeed from '../components/SocialFeed.astro';
+import Footer from '../components/Footer.astro';
+import ChatFAB from '../components/ChatFAB.astro';
+---
+
+<Layout title="Vaqrylen — Farm-to-Table Experience">
+  <main>
+    <Hero
+      videoSrc="/hero-video.mp4"
+      videoPoster="/hero-poster.jpg"
+    />
+    <ProductCarousel />
+
+    <section class="section-features" data-od-id="features-section">
+      <div class="container">
+        <FeatureBlock
+          title="Fresh Baskets"
+          description="Hand-selected seasonal produce arranged in our signature woven baskets. Each delivery captures the harvest at its finest moment."
+          linkText="Shop Baskets"
+          linkHref="#"
+          imageSrc="/features/fresh-baskets.jpg"
+          imageAlt="Fresh Baskets"
+          iconSvg={`<svg viewBox="0 0 24 24"><path d="M6 8l4-4 4 4M4 12l8-8 8 8M3 16h18v4H3z" stroke-linecap="round" stroke-linejoin="round"/></svg>`}
+        />
+        <FeatureBlock
+          title="Weekend Market"
+          description="Visit our farm stand every Saturday for live cooking demos, fresh-picked samples, and the season's best offerings straight from the field."
+          linkText="Visit the Market"
+          linkHref="#"
+          imageSrc="/features/weekend-market.jpg"
+          imageAlt="Weekend Market"
+          iconSvg={`<svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v10M16 18H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>`}
+          reverse={true}
+        />
+      </div>
+    </section>
+
+    <section class="section-community" data-od-id="community-section">
+      <div class="container">
+        <CommunityBlock
+          title="Events"
+          description="Join us for unique, curated farm-to-table dining experiences. Click here to learn about our upcoming dinner series, workshops, and private events."
+          linkText="View Upcoming Events"
+          linkHref="#"
+          imageSrc="/community/events.jpg"
+          imageAlt="Events & Dining"
+          iconSvg={`<svg viewBox="0 0 24 24"><path d="M8 22V8a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 22V12a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8h14" stroke-linecap="round"/></svg>`}
+        />
+      </div>
+    </section>
+
+    <Testimonials />
+
+    <SocialFeed />
+  </main>
+  <Footer />
+  <ChatFAB />
+</Layout>

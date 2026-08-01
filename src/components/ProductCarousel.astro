@@ -1,0 +1,56 @@
+---
+interface Product {
+  id: string;
+  name: string;
+  price: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+}
+
+const products: Product[] = [
+  { id: '1', name: 'Gourmet Artichokes', price: '$15 / bundle', description: 'Freshly harvested from our fields.', image: '/products/artichokes.jpg', imageAlt: 'Artichoke Bundle' },
+  { id: '2', name: 'Rainbow Carrot Mix', price: '$12 / bundle', description: 'Freshly harvested from our fields.', image: '/products/carrots.jpg', imageAlt: 'Rainbow Carrot Mix' },
+  { id: '3', name: 'Microgreens Box', price: '$18 / box', description: 'Freshly harvested from our fields.', image: '/products/microgreens.jpg', imageAlt: 'Microgreens Box' },
+  { id: '4', name: 'Heritage Tomatoes', price: '$14 / basket', description: 'Freshly harvested from our fields.', image: '/products/tomatoes.jpg', imageAlt: 'Heritage Tomatoes' },
+  { id: '5', name: 'Organic Kale', price: '$10 / bunch', description: 'Freshly harvested from our fields.', image: '/products/kale.jpg', imageAlt: 'Organic Kale' },
+  { id: '6', name: 'Fresh Herbs Bundle', price: '$16 / bundle', description: 'Freshly harvested from our fields.', image: '/products/herbs.jpg', imageAlt: 'Fresh Herbs Bundle' },
+];
+---
+
+<section class="section-contact" data-od-id="contact-section">
+  <div class="container">
+    <div class="contact-info">
+      <p>500 TERRY FRANCINE STREET, SAN FRANCISCO, CA 94158 | 123-456-7890 | INFO@MYSITE.COM</p>
+    </div>
+    <div class="contact-separator"></div>
+
+    <div class="section-title">
+      <h2>SHOP OUR PRODUCE</h2>
+    </div>
+
+    <div class="carousel-wrapper" data-od-id="product-carousel">
+      <button class="carousel-arrow prev" aria-label="Scroll products left">
+        <svg viewBox="0 0 16 16"><polyline points="10,3 5,8 10,13" fill="none"/></svg>
+      </button>
+      <div class="carousel-track">
+        {products.map(product => (
+          <div class="product-card" data-od-id={`product-card-${product.id}`}>
+            <div class="card-img">
+              <img src={product.image} alt={product.imageAlt} loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>{product.name}</h3>
+              <p class="price">{product.price}</p>
+              <p class="desc">{product.description}</p>
+              <button class="btn-add">Add to Cart +</button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="carousel-arrow next" aria-label="Scroll products right">
+        <svg viewBox="0 0 16 16"><polyline points="6,3 11,8 6,13" fill="none"/></svg>
+      </button>
+    </div>
+  </div>
+</section>

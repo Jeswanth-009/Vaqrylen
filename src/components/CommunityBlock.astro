@@ -1,0 +1,34 @@
+---
+interface CommunityBlockProps {
+  title: string;
+  description: string;
+  linkText: string;
+  linkHref: string;
+  imageSrc: string;
+  imageAlt: string;
+  iconSvg: string;
+  reverse?: boolean;
+}
+
+const {
+  title,
+  description,
+  linkText,
+  linkHref,
+  imageSrc,
+  imageAlt,
+  iconSvg,
+  reverse = false
+} = Astro.props;
+---
+<div class="community-block" style={reverse ? 'flex-direction: row-reverse;' : ''}>
+  <div class="community-img">
+    <img src={imageSrc} alt={imageAlt} loading="lazy" />
+    <div class="icon-overlay" set:html={iconSvg} />
+  </div>
+  <div class="community-text">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <a href={linkHref} class="link-more">{linkText}</a>
+  </div>
+</div>

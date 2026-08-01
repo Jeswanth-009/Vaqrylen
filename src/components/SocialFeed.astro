@@ -1,0 +1,44 @@
+---
+interface SocialTile {
+  id: string;
+  image: string;
+  alt: string;
+}
+
+const socialTiles: SocialTile[] = [
+  { id: '1', image: '/social/lettuce-field.jpg', alt: 'Lettuce Field' },
+  { id: '2', image: '/social/rainbow-carrots.jpg', alt: 'Rainbow Carrots' },
+  { id: '3', image: '/social/farm-chicken.jpg', alt: 'Farm Chicken' },
+  { id: '4', image: '/social/cabbage-harvest.jpg', alt: 'Cabbage Harvest' },
+  { id: '5', image: '/social/radish-row.jpg', alt: 'Radish Row' },
+];
+
+const instagramIcon = `<svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none"/></svg>`;
+---
+
+<section class="section-social" data-od-id="social-section">
+  <div class="container">
+    <div class="social-feed-title">
+      <h2>Follow Us</h2>
+    </div>
+
+    <div class="social-feed" data-od-id="social-feed">
+      <button class="social-feed-arrow left" aria-label="Scroll feed left">
+        <svg viewBox="0 0 14 14"><polyline points="9,2 4,7 9,12" fill="none"/></svg>
+      </button>
+      <div class="social-feed-track">
+        {socialTiles.map(tile => (
+          <div class="social-tile" data-od-id={`social-tile-${tile.id}`}>
+            <img src={tile.image} alt={tile.alt} loading="lazy" />
+            <div class="corner-icons">
+              {instagramIcon}
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="social-feed-arrow right" aria-label="Scroll feed right">
+        <svg viewBox="0 0 14 14"><polyline points="5,2 10,7 5,12" fill="none"/></svg>
+      </button>
+    </div>
+  </div>
+</section>

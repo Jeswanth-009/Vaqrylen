@@ -1,0 +1,40 @@
+---
+interface Testimonial {
+  quote: string;
+  author: string;
+  location: string;
+}
+
+const testimonials: Testimonial[] = [
+  { quote: "The fresh baskets are incredible. Best quality I've found in San Diego. The delivery was perfect!", author: "Sarah J.", location: "Local Food Advocate" },
+  { quote: "We've been getting the weekend market box for six months now. The heirloom tomatoes alone are worth it — sweet, complex, still warm from the sun.", author: "Marcus T.", location: "Chef, Farmhouse Kitchen" },
+  { quote: "The farm dinner last month was unforgettable. Five courses, each ingredient picked that morning. You taste the care in every bite.", author: "Elena R.", location: "Event Attendee" },
+  { quote: "My kids actually eat vegetables now. The rainbow carrot mix and microgreens box make it fun. Thank you for making healthy exciting.", author: "David K.", location: "Parent of Two" },
+];
+---
+
+<div class="testimonials-section">
+  <div class="section-title">
+    <h2>Testimonials</h2>
+  </div>
+  <div class="testimonials-carousel" data-od-id="testimonials-carousel">
+    <div class="testimonial-track">
+      {testimonials.map(t => (
+        <div class="testimonial-slide">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">{t.quote}</p>
+          <p class="quote-author">{t.author}</p>
+          <p class="quote-location">{t.location}</p>
+        </div>
+      ))}
+    </div>
+    <div class="testimonial-arrows">
+      <button class="testimonial-arrow prev" aria-label="Previous testimonial">
+        <svg viewBox="0 0 14 14"><polyline points="9,2 4,7 9,12" fill="none"/></svg>
+      </button>
+      <button class="testimonial-arrow next" aria-label="Next testimonial">
+        <svg viewBox="0 0 14 14"><polyline points="5,2 10,7 5,12" fill="none"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
